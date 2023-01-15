@@ -21,7 +21,7 @@ export const handler = async (event: APIGatewayProxyEvent) => {
 
     // get the deals from cheapshark, and convert the prices to the currency
     const deals = await axios.get(
-      "www.cheapshark.com/api/1.0/deals?upperPrice=15&pageSize=5"
+      "https://www.cheapshark.com/api/1.0/deals?upperPrice=15&pageSize=5"
     );
 
     const currencyData = await axios.get(
