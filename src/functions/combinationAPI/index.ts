@@ -56,5 +56,13 @@ export const handler = async (event: APIGatewayProxyEvent) => {
     });
 
     return formatJSONResponse({ data: repricedDeals });
-  } catch (error) {}
+  } catch (error) {
+    console.log("error:", error);
+    return formatJSONResponse({
+      statusCode: 502,
+      data: {
+        message: error.message,
+      },
+    });
+  }
 };
